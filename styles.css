@@ -1,0 +1,51 @@
+body {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  margin: 0;
+  font-family: "Arial", sans-serif;
+  text-align: center;
+}
+
+h1,
+h2,
+p {
+  margin: 10px;
+}
+
+.collapse-content {
+  overflow: hidden;
+  max-height: 0;
+  transition: max-height 0.5s ease-out, opacity 0.5s ease-out;
+  opacity: 0;
+}
+
+.collapse-content.show {
+  max-height: 200px; /* Adjust as needed */
+  opacity: 1;
+}
+
+.toggle-explanation {
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  user-select: none; /* Prevent text selection */
+  margin: 10px;
+}
+
+.toggle-explanation .chevron {
+  margin-left: 5px;
+  transition: transform 0.3s ease;
+  width: 1em;
+  height: 1em;
+}
+
+.toggle-explanation.show .chevron {
+  transform: rotate(180deg); /* Rotate chevron when content is shown */
+}
+
+svg.chevron {
+  fill: currentColor; /* Use current text color */
+}
